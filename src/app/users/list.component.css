@@ -1,0 +1,26 @@
+table, th, td {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid navy;
+    border-collapse: collapse;
+  }
+
+
+  
+
+  th{
+      background-color: navy;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+  }
+
+  td{
+      background-color: #fff;
+      color: navy;
+      font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  }
