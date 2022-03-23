@@ -7,8 +7,8 @@
 
 
 
-<h1 *ngIf="isAddMode">Add User</h1>
-<h1 *ngIf="!isAddMode">Edit User</h1>
+<h1 *ngIf="isAddMode" style="color: navy;">Add Employee</h1>
+<h1 *ngIf="!isAddMode"  style="color: navy;">Edit Employee</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
         <div class="form-group col">

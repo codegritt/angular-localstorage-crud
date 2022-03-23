@@ -7,15 +7,16 @@
 
 
 
-<h1>Employees</h1>
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add User</a>
+
+<!-- <a routerLink="add" class="btn btn-sm btn-success mb-2" style="position: relative;left: 253px;">Add User</a> -->
+<i  routerLink="add" class="fa-solid fa-square-plus"  style="color:#198754;position: relative;left: 253px;font-size: 36px;"></i>
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width: 30%">Name</th>
-            <th style="width: 30%">Email</th>
+            <th style="width: 30%">Employee Name</th>
+            <th style="width: 30%">Employee Email</th>
             <th style="width: 30%">Role</th>
-            <th style="width: 10%"></th>
+            <th style="width: 10%">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -24,11 +25,21 @@
             <td>{{user.email}}</td>
             <td>{{user.role}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                <!-- <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+                <i  routerLink="edit/{{user.id}}" [disabled]="user.isDeleting" class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i>
+
+                &nbsp;&nbsp;&nbsp;
+                <i (click)="deleteUser(user.id)"  class="fa-solid fa-trash-can" style="color: #dc3545;">
+                
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting"></span></i>
+
+
+
+                <!-- <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
                     <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!user.isDeleting">Delete</span>
-                </button>
+                </button> -->
             </td>
         </tr>
         <tr *ngIf="!users">
