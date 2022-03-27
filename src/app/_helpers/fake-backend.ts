@@ -69,6 +69,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             return ok();
         }
 
+        
         function updateUser() {
             let params = body;
             let user = users.find(x => x.id === idFromUrl());
